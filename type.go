@@ -4,16 +4,16 @@ import (
 	"encoding/json"
 )
 
-type dbErr struct {
+type DbErr struct {
 	Number int
 	Message string
 }
 
-func (e *dbErr) Error() string {
+func (e *DbErr) Error() string {
 	return e.Message
 }
 
-func (e *dbErr) mapping(err error) error {
+func (e *DbErr) mapping(err error) error {
 	errBytes, errJ := json.Marshal(err)
 	if errJ != nil {
 		return errJ
