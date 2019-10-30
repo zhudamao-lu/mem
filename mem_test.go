@@ -31,7 +31,7 @@ func insert() error {
 func TestMem(t *testing.T) {
 	err := insert()
 	if err != nil {
-		dbError := &dbErr{}
+		dbError := &DbErr{}
 		err := dbError.mapping(err)
 		if err != nil {
 			t.Error(err.Error())
