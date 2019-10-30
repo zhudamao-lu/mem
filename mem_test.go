@@ -32,7 +32,7 @@ func TestMem(t *testing.T) {
 	err := insert()
 	if err != nil {
 		dbError := &DbErr{}
-		err := dbError.mapping(err)
+		err := dbError.Mapping(err)
 		if err != nil {
 			t.Error(err.Error())
 			return

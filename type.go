@@ -13,7 +13,7 @@ func (e *DbErr) Error() string {
 	return e.Message
 }
 
-func (e *DbErr) mapping(err error) error {
+func (e *DbErr) Mapping(err error) error {
 	errBytes, errJ := json.Marshal(err)
 	if errJ != nil {
 		return errJ
